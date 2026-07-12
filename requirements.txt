@@ -1,0 +1,12 @@
+allure-pytest
+pytest
+pytest-xdist
+pytest-repeat
+pytest-order
+dotenv
+dynaconf
+jsonref
+requests
+pyyaml
+jsonschema
+pyotp
