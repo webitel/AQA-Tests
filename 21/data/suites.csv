@@ -1,0 +1,95 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+    get system settings by id
+    ","443","test__settings_id__GET_200","tests","Sun Jul 12 21:12:18 UTC 2026","passed","Sun Jul 12 21:12:19 UTC 2026","","test__settings","",""
+"
+    get system settings
+    ","404","test__settings__GET_200","tests","Sun Jul 12 21:12:18 UTC 2026","passed","Sun Jul 12 21:12:18 UTC 2026","","test__settings","",""
+"
+    change password in /users/id/general
+    ","450","test__users_id__change_password__PUT_200","tests","Sun Jul 12 21:12:15 UTC 2026","broken","Sun Jul 12 21:12:15 UTC 2026","","test__users__users","",""
+"","414","test__call_center__preset_query__POST_200","tests","Sun Jul 12 21:12:14 UTC 2026","passed","Sun Jul 12 21:12:14 UTC 2026","","test__call_center__preset_query","",""
+"
+    get device by id
+    ","439","test__devices_by_id__GET_200","tests","Sun Jul 12 21:12:17 UTC 2026","broken","Sun Jul 12 21:12:18 UTC 2026","","test__devices","",""
+"
+    Create new device
+    ","423","test__devices__POST_200","tests","Sun Jul 12 21:12:16 UTC 2026","broken","Sun Jul 12 21:12:16 UTC 2026","","test__devices","",""
+"
+    get device by id
+    ","390","test__devices_id_users_audit__GET_200","tests","Sun Jul 12 21:12:17 UTC 2026","broken","Sun Jul 12 21:12:18 UTC 2026","","test__devices","",""
+"
+    Change device name by id
+    ","414","test__devices_by_id__PUT_200","tests","Sun Jul 12 21:12:18 UTC 2026","broken","Sun Jul 12 21:12:18 UTC 2026","","test__devices","",""
+"
+    login without mobile mark
+    ","259","test__auth__login__POST_200[with domain]","tests","Sun Jul 12 21:12:16 UTC 2026","passed","Sun Jul 12 21:12:17 UTC 2026","","test__auth","",""
+"
+    login with mobile mark
+    ","250","test__auth__login_mobile__POST_200","tests","Sun Jul 12 21:12:16 UTC 2026","passed","Sun Jul 12 21:12:16 UTC 2026","","test__auth","",""
+"","394","test__call_center__preset_query_by_id__PATCH_200","tests","Sun Jul 12 21:12:14 UTC 2026","passed","Sun Jul 12 21:12:15 UTC 2026","","test__call_center__preset_query","",""
+"
+    get available system settings
+    ","412","test__settings_available__GET_200","tests","Sun Jul 12 21:12:18 UTC 2026","passed","Sun Jul 12 21:12:19 UTC 2026","","test__settings","",""
+"
+    get user data by user id
+    ","414","test__user_by_id__GET_200","tests","Sun Jul 12 21:12:19 UTC 2026","broken","Sun Jul 12 21:12:20 UTC 2026","","test__users__user","",""
+"
+    add new system setting
+    ","0","test__settings__POST_200","tests","Sun Jul 12 21:12:19 UTC 2026","skipped","Sun Jul 12 21:12:19 UTC 2026","","test__settings","",""
+"
+    add user
+    ","431","test__users__add__POST_200","tests","Sun Jul 12 21:12:13 UTC 2026","passed","Sun Jul 12 21:12:14 UTC 2026","","test__users__users","",""
+"
+    set system settings
+    ","389","test__settings_id__PATCH_200","tests","Sun Jul 12 21:12:19 UTC 2026","passed","Sun Jul 12 21:12:19 UTC 2026","","test__settings","",""
+"
+    create new domain + first user
+    check response
+
+    response:
+    {'access_token': 'access_token', 'token_type': 'Bearer'}
+    ","232","test__auth__signup__POST_200","tests","Sun Jul 12 21:12:13 UTC 2026","failed","Sun Jul 12 21:12:13 UTC 2026","","test__auth","",""
+"
+    get users
+    ","426","test__users__GET_200","tests","Sun Jul 12 21:12:19 UTC 2026","broken","Sun Jul 12 21:12:20 UTC 2026","","test__users__users","",""
+"
+    DELETE system setting by id
+    ","0","test__settings_id__DELETE_200","tests","Sun Jul 12 21:12:19 UTC 2026","skipped","Sun Jul 12 21:12:19 UTC 2026","","test__settings","",""
+"
+    login without mobile mark
+    ","233","test__auth__login__POST_200[without domain]","tests","Sun Jul 12 21:12:17 UTC 2026","passed","Sun Jul 12 21:12:17 UTC 2026","","test__auth","",""
+"
+    change password in /settings/general
+    ","479","test__users_id__change_password__PATCH_200","tests","Sun Jul 12 21:12:15 UTC 2026","broken","Sun Jul 12 21:12:16 UTC 2026","","test__users__users","",""
+"
+    delete devices
+    ","632","test__devices_by_id__DELETE_200","tests","Sun Jul 12 21:12:16 UTC 2026","broken","Sun Jul 12 21:12:17 UTC 2026","","test__devices","",""
+"
+    get devices
+    ","656","test__devices__GET_200","tests","Sun Jul 12 21:12:17 UTC 2026","broken","Sun Jul 12 21:12:17 UTC 2026","","test__devices","",""
+"
+    Change device params by id
+    ","393","test__devices_by_id__PATCH_200","tests","Sun Jul 12 21:12:18 UTC 2026","broken","Sun Jul 12 21:12:18 UTC 2026","","test__devices","",""
+"
+    force_password_change"": True
+    ","0","test__users_id__force_change_password__PUT_200","tests","Sun Jul 12 21:12:16 UTC 2026","skipped","Sun Jul 12 21:12:16 UTC 2026","","test__users__users","",""
+"","377","test__call_center__preset_query__GET_200","tests","Sun Jul 12 21:12:15 UTC 2026","broken","Sun Jul 12 21:12:16 UTC 2026","","test__call_center__preset_query","",""
+"
+    change user password
+    ","1181","test__users__password__PUT_200","tests","Sun Jul 12 21:12:14 UTC 2026","broken","Sun Jul 12 21:12:15 UTC 2026","","test__users__users","",""
+"
+    {""id"":""login_id"",""totp"":""your_totp""}
+    ","0","test__auth__2fa__POST_200","tests","Sun Jul 12 21:12:14 UTC 2026","skipped","Sun Jul 12 21:12:14 UTC 2026","","test__auth","",""
+"
+    set system settings
+    ","379","test__settings_id__PUT_200","tests","Sun Jul 12 21:12:19 UTC 2026","passed","Sun Jul 12 21:12:19 UTC 2026","","test__settings","",""
+"","375","test__call_center__preset_query_by_id__PUT_200","tests","Sun Jul 12 21:12:14 UTC 2026","passed","Sun Jul 12 21:12:14 UTC 2026","","test__call_center__preset_query","",""
+"","624","test__call_center__preset_query_by_id__DELETE_200","tests","Sun Jul 12 21:12:15 UTC 2026","passed","Sun Jul 12 21:12:15 UTC 2026","","test__call_center__preset_query","",""
+"
+    get user data
+    ","424","test__user__GET_200","tests","Sun Jul 12 21:12:19 UTC 2026","broken","Sun Jul 12 21:12:19 UTC 2026","","test__users__user","",""
+"
+    login with new user on new domain
+    ","0","test__auth__signin_with_new__POST_200","tests","Sun Jul 12 21:12:13 UTC 2026","broken","Sun Jul 12 21:12:13 UTC 2026","","test__auth","",""
+"","394","test__call_center__preset_query_by_id__GET_200","tests","Sun Jul 12 21:12:16 UTC 2026","broken","Sun Jul 12 21:12:16 UTC 2026","","test__call_center__preset_query","",""
