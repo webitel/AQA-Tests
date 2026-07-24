@@ -1,12 +1,12 @@
 from utils.request_helper import Webitel
-from utils.endpoints import PRESET_QUERY_SERVICE, USERINFO, LOGIN, USERS, SETTINGS, DEVICES
+from utils.endpoints import CALL_CENTER, PRESET_QUERY_SERVICE, USERINFO, LOGIN, USERS, SETTINGS, DEVICES, SKILLS
 from utils.file_helper import write_json_file, read_json_file
 from config import PRESET_QUERY_SERVICE_ID, USER_new_pass_DATA, P, C_FILE, SYSTEM_SETTINGS_PASSWORD, SYSTEM_SETTINGS_2FA
 
 
 def get_id_call_center__preset_query_DELETE():
-    request = Webitel(obf_endpoint=PRESET_QUERY_SERVICE)
-    response = request.get(endpoint=PRESET_QUERY_SERVICE, _params={'size': 5000}, attachments=False)
+    request = Webitel(obf_endpoint=CALL_CENTER+PRESET_QUERY_SERVICE)
+    response = request.get(endpoint=CALL_CENTER+PRESET_QUERY_SERVICE, _params={'size': 5000}, attachments=False)
     data = response.json()
     items = data['items']
     for item in items:
@@ -61,9 +61,37 @@ def set_2fa(c):
     request.put(endpoint=f'{SETTINGS}/{settings['id']}', data={"value": c}, attachments=False)
 
 
-def get_devices(_for="delete"):
-    name = f"aqa_{_for}*"
-    params = {"size":1000, "name":name}
+def get_devices(**kwargs):
+    params = kwargs
     request = Webitel(obf_endpoint=DEVICES)
     response_devices = request.get(endpoint=DEVICES, _params=params, attachments=False)
     return response_devices.json()
+
+
+def get_device_for_delete():
+    name = f"aqa_delete*"
+    params = {"size":1000, "name":name}
+    devices = get_devices(**params)
+    try:
+        device_id = [i['id'] for i in devices['items']][0]
+        return device_id
+    except Exception as e:
+        raise e
+
+
+def get_skills(**kwargs):
+    params = kwargs
+    request = Webitel(obf_endpoint=CALL_CENTER+SKILLS)
+    response = request.get(endpoint=CALL_CENTER+SKILLS, _params=params, attachments=False)
+    return response.json()
+
+
+def get_skill_id_for_delete():
+    name = f"aqa_delete*"
+    params = {"size":1000, "q":name}
+    skills = get_skills(**params)
+    try:
+        skill_id = [i['id'] for i in skills['items']][0]
+        return skill_id
+    except Exception as e:
+        raise e

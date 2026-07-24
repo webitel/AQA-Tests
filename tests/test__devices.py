@@ -4,7 +4,7 @@ from datetime import datetime
 
 from utils.helpers import endpoint_schema, validate_schema
 from utils.request_helper import Webitel
-from utils.request_utils import get_devices
+from utils.request_utils import get_device_for_delete
 from utils.endpoints import DEVICES, DEVICES_ID_USERS_AUDIT
 from config import DEVICE_ID, DEVICE_NAME, DEFAULT_PASSWORD__1q_6y
 
@@ -121,9 +121,8 @@ def test__devices_by_id__DELETE_200():
     """
     delete devices
     """
-    d_devices = get_devices()
     try:
-        device_id = [i['id'] for i in d_devices['items']][0]
+        device_id = get_device_for_delete()
     except Exception as e:
         raise Exception("Need devices for deleting") from None
     request = Webitel(obf_endpoint=DEVICES + '/{id}')

@@ -8,7 +8,7 @@ from urllib3.util.url import parse_url
 from jsonschema import validate
 from jsonschema.exceptions import ValidationError
 
-from info_path_sys import path_to_project
+from info_path_sys import path_to_project, get_option
 from utils.file_helper import write_json_file, append_to_json_file, load_json_schema, read_json_file
 from config import (SCHEMA_DIR, SCHEMA_NAME, DEFAULT_SCHEMA_NAME, DEFAULT_USER_DATA_FILE, TOTP_SECRET,
                     DEFAULT_USER_LOGIN_SESSION_DATA_FILE,DEFAULT_USER_NAME__1, DEFAULT_PASSWORD__1q_6y, C_FILE, P)
@@ -28,9 +28,17 @@ def validate_schema(instance, schema):
             f"Missing required property: {e.validator_value}\n"
             f"Schema path: {list(e.schema_path)}"
         )
-        instance = "[CONFIDENTIAL_DATA_HIDDEN]"
+        i = show_instance()
+        instance = i if i is not None else instance
         raise SchemaValidationError(safe_message) from None
         # raise AssertionError(safe_message) from None
+
+
+def show_instance():
+    if get_option("--IN_FO") not in [True, "True"]:
+        return "[CONFIDENTIAL_DATA_HIDDEN]"
+    else:
+        return None
 
 
 def _json_serializable(text):

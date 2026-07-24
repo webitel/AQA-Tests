@@ -1,11 +1,17 @@
 import os
 import json
 import pytest
+import info_path_sys
 from preconditions import clear_all_tmp_files, save_spec, set_password_to_normal, set_system_settings
 
 
 def pytest_addoption(parser):
     parser.addoption("--env", action="store", default="test", help="(YES | NO)")
+    parser.addoption("--IN_FO", action="store", default=False)
+
+
+def pytest_configure(config):
+    info_path_sys.pytest_config = config
 
 
 @pytest.hookimpl(trylast=True)

@@ -1,6 +1,4 @@
 import os
-import re
-import sys
 import platform
 from os.path import expanduser
 
@@ -8,17 +6,18 @@ os_name = platform.system().lower()
 current_user = expanduser("~")
 path_to_project = os.path.dirname(os.path.abspath(__file__))
 
+pytest_config = None
 
-def get_option(option):
+
+def get_option(option_name):
     """
-    :param option: matched option
+    :param option_name: matched option
     :return: value of option or Exception()
     """
-    value = None
-    all_argv = sys.argv
-    for arg in all_argv:
-        reg = re.match(r"(%s.*)" % option, arg)
-        if reg:
-            key, value = reg.group().split("=")
-            break
-    return value if value is not None else Exception("No option '%s'" % option)
+    if pytest_config is None:
+        raise RuntimeError("pytest not initialised.")
+    full_name = option_name if option_name.startswith("--") else f"--{option_name}"
+    try:
+        return pytest_config.getoption(full_name)
+    except ValueError:
+        raise Exception(f"No option '{option_name}'")

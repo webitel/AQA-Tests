@@ -29,15 +29,15 @@ def test__auth__signup__POST_200():
     response:
     {'access_token': 'access_token', 'token_type': 'Bearer'}
     """
-
-    params = {
+    params = {"generate_device": "true"}
+    data = {
         "domain": domain_name,
         "username": DEFAULT_USER_NAME__1,
         "password": DEFAULT_PASSWORD__1q_6y,
-        "certificate": LICENSE_KEY
+        "certificate": "wcBMAyuMoDYMMH1QAQf/cWlEMci+PDa/vl3E45j536gkG/07uHk9KgLj+oFL7LKpVmDxbAekHFT1IC7pRqqpVNTLkHcfW9vel99kZzYgdUH9jG399tlGbqp7bJPPs6c6SRfY+KyGhdEleumXKaLe7oQlRbashdYra2izu6Uak39Jr3Lxqre+rulANvAXbrLoF96iM4VT2Ec6M3YiXiYfxCEL9MZntmGsfq+IfC45lo1/rtD0HAVl5IhBrjK0qUNUjFpaTUSBuiZ/j1fZt478xxQaka8AI06JUPUJsmpDS8x1ZhTu7fgEBMfdqzIEzP/zDtus0bSrNN0unmy1clTph13aqcEg0tjetuBkCZDrQNLpAWzye2A7b6l38Nu23dV/yzgTmfZ9glsRFHRyB8+FFkUJR7Vp5mzOlxbu+ukQETYre2D78nFyonfhFpY9OmMb1J2WhfHn+JXSfgv28cjS1th2qL8cfQM2tD1K2YzrgrVEF+glQuOuuj76W8lGAQpkMLEbFQanqtWpgb/2P00EYyw3IrFESv1hz/UUh5p2GJEXGAVg7BTxtiqjEQqgWQwrEHzkylKLoRW65d/pi/Pa+6uVLlbWSU0Ru9IzOJ5czqxHsedUtM63i54iUQw9h+TYTaiNaNJwo2Q2oWqdy3oIoMwrSFLFVjsVFeGBGmAcjRmUiFcTfd1bwVeOUcXGGaQzjzFUs1wCXH3VRrj9SvfUYlWr0sKxLFZA4EWph2nkM0zoGdCPTJQkR0DKXzQ7MauUQLwt8M6wcbCgyd5/jZj2XLaylF1Z6s+9gFogWCjX5qKHiwCnimyarMzHFS1HVARPjdqkiV11JGeHTnzA3uAXWTx+M67bY59B81jPh+yRehTPnUJvwxZEVqcsfaZiuAbfb19yhhDYJsewPIF8aZfQ5JuXzfkMKypWIMdIF41mvIXEf3EW0qyNRG8bgeUATrcC4rtd1zyrsHD2xyNBGSbLvXWW19QDauPGF30/fICXEYzbWEygtTNCuLq9vH3zvkhGIlBPxO3dvvFI1A1vE6vzQsLBArVYhXkGtjs8EYVY1Q4z/K5yEMlAQ5Hj2n2MgzdBHOyYxYeGtYHTxLcNAI4eNDr2QMeKqu8WiAbN+F5IjIbY/x+7thJn9oNkTYQSaB9nXjGf0MuNC7Ng3SFSC6RbYGaYhyYXtQ5Vn44sE9SxwOsrRMyL/l1/nS2zow3ychgPH3WcuTTZf23tVmyxp+hcgjah40sX0wCIk5V6RAd8Y4R9lcqGSpjRl0tUJRmP6zFfAcYuDMQq4VzQIYXnFc3vwQjhnTYlLj3ueseq97qNvkv10JWyUy0fc9SPVdcHob7mBh4s8ZbIowh+uTKzAKpqh4Xi3z/xm3NUv2dpmQKcP0hygKDANag1/utfksYel2MPKffK02dmFkKW/4RP8YcJ7LZ9GGiMuPnnNXwpEpWjdXGKSTfpJzkqXuAgzAVmkaL6Q3i42axdTqV0by6cXMiyc9tjGCNkudhE6vPN7KvbNiz1ZYiyzDH+iP5nNMNmbn6M8fyxg1zsUbdGG3J/rfEoGzbja2kA6Yxw9i9SxJ5yU+4vCgFPkro8vOyAhVvU7qlxckAz5af8lslywy2JTVeIAR21s1nGJccWKETExuP54/WO4pDDqQ=="
     }
     request = Webitel(obf_endpoint=SIGNUP, custom_header="clear")
-    response = request.post(endpoint=SIGNUP, data={}, _params=params)
+    response = request.post(endpoint=SIGNUP, data=data, _params=params)
     assert response.status_code == 200
     validate_schema(instance=response.json(), schema=endpoint_schema(endpoint=SIGNUP,
                                                               method='POST',

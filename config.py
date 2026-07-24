@@ -16,8 +16,11 @@ files with configs:
 settings = Dynaconf(root_path=path_to_project, includes=["*.yaml"])
 
 def __env():
-    get_env = get_option("--env")
-    return get_env if get_env is None else "test"
+    try:
+        get_env = get_option("--env")
+        return get_env
+    except Exception:
+        return "test"
 
 
 _env = __env()
@@ -69,3 +72,5 @@ ADD_USER = {
     "profile": {},
     "username": "user{number}"
 }
+
+SKILLS_PARAMS = settings.secret[_env].skills.to_dict()
