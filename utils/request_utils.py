@@ -1,7 +1,8 @@
 from utils.request_helper import Webitel
-from utils.endpoints import CALL_CENTER, PRESET_QUERY_SERVICE, USERINFO, LOGIN, USERS, SETTINGS, DEVICES, SKILLS
+from utils.endpoints import CALL_CENTER, PRESET_QUERY_SERVICE, USERINFO, LOGIN, LOGOUT, USERS, SETTINGS, DEVICES, SKILLS
 from utils.file_helper import write_json_file, read_json_file
-from config import PRESET_QUERY_SERVICE_ID, USER_new_pass_DATA, P, C_FILE, SYSTEM_SETTINGS_PASSWORD, SYSTEM_SETTINGS_2FA
+from config import (PRESET_QUERY_SERVICE_ID, USER_new_pass_DATA, P, C_FILE, SYSTEM_SETTINGS_PASSWORD,
+                    SYSTEM_SETTINGS_2FA, USER_ID)
 
 
 def get_id_call_center__preset_query_DELETE():
@@ -35,30 +36,40 @@ def do_login(password, username, domain):
     return response
 
 
+def do_logout(user_id = None):
+    _user_id = USER_ID if user_id is None else user_id
+    data = {"id": str(_user_id)}
+    request_logout = Webitel(obf_endpoint=LOGOUT, custom_header="clear")
+    request_logout.post(endpoint=LOGOUT, data=data, allow_redirects=True, attachments=False)
+
+
 def set_password_to_normal():
     user_data = USER_new_pass_DATA
     passwords_list = list(P.values())*2
     for p in passwords_list:
         data = {"password": p, "username": user_data['new_pass']['username']}
-        request = Webitel(obf_endpoint=USERS + "/{id}", custom_header={'X-Webitel-Access': user_data['access_token']})
-        request.put(endpoint=f"{USERS}/{user_data['new_pass']['user_id']}", data=data, attachments=False)
+        request_set_password_to_normal = Webitel(obf_endpoint=USERS + "/{id}", custom_header={'X-Webitel-Access': user_data['access_token']})
+        request_set_password_to_normal.put(endpoint=f"{USERS}/{user_data['new_pass']['user_id']}", data=data, attachments=False)
     counter_data = read_json_file(C_FILE)
     counter_data["p_o"] = "7"
     counter_data["p_n"] = "8"
     write_json_file(C_FILE, counter_data)
+    do_logout()
 
 
 def set_system_settings():
     settings = SYSTEM_SETTINGS_PASSWORD
     for setting in settings:
-        request = Webitel(obf_endpoint=SETTINGS + '{id}')
-        request.put(endpoint=f'{SETTINGS}/{setting['id']}', data={"value": setting['value']}, attachments=False)
+        request_set_system_settings = Webitel(obf_endpoint=SETTINGS + '{id}')
+        request_set_system_settings.put(endpoint=f'{SETTINGS}/{setting['id']}', data={"value": setting['value']}, attachments=False)
+    do_logout()
 
 
 def set_2fa(c):
     settings = SYSTEM_SETTINGS_2FA
     request = Webitel(obf_endpoint=SETTINGS + '{id}')
     request.put(endpoint=f'{SETTINGS}/{settings['id']}', data={"value": c}, attachments=False)
+    do_logout()
 
 
 def get_devices(**kwargs):

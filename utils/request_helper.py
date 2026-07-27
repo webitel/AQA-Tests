@@ -132,13 +132,16 @@ class Webitel(Attachments):
 
     def _get_headers(self):
         if self.custom_header is None:
-            HEADERS['X-Webitel-Access'] = TOKEN
+            headers = HEADERS.copy()
+            headers['X-Webitel-Access'] = TOKEN
+            return headers
         elif self.custom_header in ["clear", "CLEAR", "Clear"]:
             return HEADERS
         else:
+            headers = HEADERS.copy()
             for k,v in self.custom_header.items():
-                HEADERS[k] = v
-        return HEADERS
+                headers[k] = v
+            return headers
 
     @staticmethod
     def _check_json_serializable(response):
