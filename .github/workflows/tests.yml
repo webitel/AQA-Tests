@@ -56,41 +56,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository (gh-pages branch)
-        uses: actions/checkout@v4
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages-dir
-
       - name: Download Allure results
         uses: actions/download-artifact@v4
         if: always()
         with:
           name: allure-results
-          path: current-allure-results
+          path: allure-results
 
-      - name: Load Allure history and generate report
-        uses: allure-framework/allure-github-actions@v2.3.7
+      - name: Allure Report Action
+        uses: allure-framework/allure-action@v1
         if: always()
         with:
-          allure_results: current-allure-results
-          allure_history: gh-pages-dir/allure-history
-          allure_report: allure-report
+          allure_results: allure-results
+          allure_history: allure-history
           keep_reports: 20
-
-      - name: Move report to deployment directory
-        if: always()
-        run: |
-          mkdir -p gh-pages-dir/allure-history
-          cp -r allure-report/. gh-pages-dir/allure-history/${{ github.run_number }}/
-          cp -r allure-report/. gh-pages-dir/
-
-      - name: Deploy report to Github Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
+          gh_pages_branch: gh-pages
           github_token: ${{ secrets.ALLURE_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: gh-pages-dir
