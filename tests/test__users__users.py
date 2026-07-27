@@ -108,7 +108,7 @@ def test__users_id__change_password__PATCH_200():
 @allure.story("Users")
 @pytest.mark.smoke
 @pytest.mark.nightly
-@pytest.mark.order(999)
+@pytest.mark.order(5)
 @pytest.mark.xdist_group(name="password")
 @pytest.mark.skip(reason="NO LOGIN WINDOW WITH NEW PASSWORD FORM")
 def test__users_id__force_change_password__PUT_200():

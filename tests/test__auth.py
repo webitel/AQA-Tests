@@ -5,7 +5,9 @@ from datetime import datetime
 
 from config import (DOMAIN, LICENSE_KEY, DEFAULT_USER_NAME__1, DEFAULT_PASSWORD__1q_6y,
                     DEFAULT_DOMAIN_NAME_1, DEFAULT_USER_DATA_FILE, DEFAULT_USER_LOGIN_NAME, USER_new_pass_DATA)
-from utils.helpers import endpoint_schema, default_endpoint_schema, validate_schema, roll_password, get_totp_now
+from utils.helpers import (endpoint_schema, default_endpoint_schema, validate_schema, roll_password, get_totp_now,
+                           save_data_created_domain)
+
 from utils.request_helper import Webitel
 from utils.request_utils import do_login, set_2fa
 from utils.endpoints import SIGNUP, LOGIN, LOGIN_2FA
@@ -44,6 +46,8 @@ def test__auth__signup__POST_200():
                                                               status_code=200,
                                                               _required_fields=['access_token']
                                                               ))
+    save_data_created_domain(response, domain_name)
+
 
 @allure.feature("AUTH")
 @allure.story("Signup")
@@ -107,29 +111,29 @@ def test__auth__login__POST_200(data):
     validate_schema(instance=response_login.json(), schema=default_endpoint_schema(method='POST', status_code=200,
                                                                             _required_fields=['access_token']))
 
-# @allure.feature("AUTH")
-# @allure.story("Login")
-# @pytest.mark.smoke
-# @pytest.mark.nightly
-# @pytest.mark.order(1)
-# @pytest.mark.xdist_group(name="password")
-# @pytest.mark.skip(reason="NO LOGIN WINDOW WITH NEW PASSWORD FORM")
-# def test__auth__login_password__POST_200():
-#     user_data = USER_new_pass_DATA
-#     passwords = roll_password()
-#     data = {
-#         "domain": user_data['domain'],
-#         "id": user_data['new_pass']['user_id'],
-#         "old_password": passwords['old_password'],
-#         "user_password": passwords['new_password'],
-#         "confirm_password": passwords['new_password'],
-#         "username": user_data['new_pass']['username']
-#         }
-#     login_request = Webitel(obf_endpoint=LOGIN, custom_header={'X-Webitel-Access': user_data['access_token']})
-#     login_response = login_request.post(endpoint=LOGIN, data=data)
-#     assert login_response.status_code == 200
-#     validate_schema(instance=login_response.json(), schema=default_endpoint_schema(method='POST', status_code=200,
-#                                                                             _required_fields=['access_token']))
+@allure.feature("AUTH")
+@allure.story("Login")
+@pytest.mark.smoke
+@pytest.mark.nightly
+@pytest.mark.order(6)
+@pytest.mark.xdist_group(name="password")
+@pytest.mark.skip(reason="NO LOGIN WINDOW WITH NEW PASSWORD FORM")
+def test__auth__login_password__POST_200():
+    user_data = USER_new_pass_DATA
+    passwords = roll_password()
+    data = {
+        "domain": user_data['domain'],
+        "id": user_data['new_pass']['user_id'],
+        "old_password": passwords['old_password'],
+        "user_password": passwords['new_password'],
+        "confirm_password": passwords['new_password'],
+        "username": user_data['new_pass']['username']
+        }
+    login_request = Webitel(obf_endpoint=LOGIN, custom_header={'X-Webitel-Access': user_data['access_token']})
+    login_response = login_request.post(endpoint=LOGIN, data=data)
+    assert login_response.status_code == 200
+    validate_schema(instance=login_response.json(), schema=default_endpoint_schema(method='POST', status_code=200,
+                                                                            _required_fields=['access_token']))
 
 
 @allure.feature("AUTH")
