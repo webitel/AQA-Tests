@@ -2,7 +2,7 @@ import os
 import json
 import pytest
 import info_path_sys
-from preconditions import clear_all_tmp_files, save_spec, set_password_to_normal, set_system_settings
+from preconditions import clear_all_tmp_files, save_spec, set_password_to_normal, set_system_settings, clear_agent_skill
 
 
 def pytest_addoption(parser):
@@ -38,6 +38,8 @@ def conditions():
     save_spec()
     set_password_to_normal()
     set_system_settings()
+    clear_agent_skill()
     yield
     clear_all_tmp_files()
     set_password_to_normal()
+    clear_agent_skill()

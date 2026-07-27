@@ -1,8 +1,9 @@
 from utils.request_helper import Webitel
-from utils.endpoints import CALL_CENTER, PRESET_QUERY_SERVICE, USERINFO, LOGIN, LOGOUT, USERS, SETTINGS, DEVICES, SKILLS
+from utils.endpoints import (CALL_CENTER, PRESET_QUERY_SERVICE, USERINFO, LOGIN, LOGOUT, USERS, SETTINGS, DEVICES,
+                             SKILLS, AGENTS)
 from utils.file_helper import write_json_file, read_json_file
 from config import (PRESET_QUERY_SERVICE_ID, USER_new_pass_DATA, P, C_FILE, SYSTEM_SETTINGS_PASSWORD,
-                    SYSTEM_SETTINGS_2FA, USER_ID)
+                    SYSTEM_SETTINGS_2FA, USER_ID, SKILLS_PARAMS, AGENTS_PARAMS)
 
 
 def get_id_call_center__preset_query_DELETE():
@@ -107,3 +108,31 @@ def get_skill_id_for_delete():
         return skill_id
     except Exception as e:
         raise e
+
+
+def get_agents_for_skill_id():
+    request = Webitel(obf_endpoint=CALL_CENTER+SKILLS+'/{skill_id}'+AGENTS)
+    response = request.get(endpoint=CALL_CENTER+SKILLS+f'/{SKILLS_PARAMS['id']}'+AGENTS, attachments=False)
+    return response.json()
+
+
+def get_agent_skill_row_for_skill_id():
+    r = get_agents_for_skill_id()
+    if 'items' in r:
+        s_id = r['items'][0]['id']
+        return s_id
+    else:
+        raise Exception("No Agents added for this skill")
+
+
+def delete_skill_for_agent(skill_id, s_id, agent_id):
+    data = {"agent_id": [f"{agent_id}"], "id": [f"{s_id}"]}
+    request = Webitel(obf_endpoint=CALL_CENTER+SKILLS+'/{skill_id}'+AGENTS)
+    request.delete(endpoint=CALL_CENTER+SKILLS+f'/{skill_id}'+AGENTS, data=data, attachments=False)
+
+
+def clear_agent_skill():
+    r = get_agents_for_skill_id()
+    if 'items' in r:
+        s_id = r['items'][0]['id']
+        delete_skill_for_agent(skill_id=SKILLS_PARAMS['id'], s_id=s_id, agent_id=AGENTS_PARAMS['id'])

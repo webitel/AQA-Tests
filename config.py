@@ -74,3 +74,4 @@ ADD_USER = {
 }
 
 SKILLS_PARAMS = settings.secret[_env].skills.to_dict()
+AGENTS_PARAMS = settings.secret[_env].agents.to_dict()
