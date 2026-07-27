@@ -85,7 +85,6 @@ jobs:
       - name: Generate Report and Clean History
         if: always()
         run: |
-          mkdir -p gh-pages-dir/allure-history
           mkdir -p gh-pages-dir/last-history
           
           if [ "$(ls -A gh-pages-dir/last-history 2>/dev/null)" ]; then
@@ -95,15 +94,15 @@ jobs:
           
           allure generate current-allure-results -o allure-report --clean
           
-          mkdir -p gh-pages-dir/allure-history/${{ github.run_number }}
-          cp -r allure-report/. gh-pages-dir/allure-history/${{ github.run_number }}/
+          mkdir -p gh-pages-dir/${{ github.run_number }}
+          cp -r allure-report/. gh-pages-dir/${{ github.run_number }}/
           
           rm -rf gh-pages-dir/last-history/*
           cp -r allure-report/history/. gh-pages-dir/last-history/
           
-          echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=allure-history/${{ github.run_number }}/index.html\">" > gh-pages-dir/index.html
+          echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=${{ github.run_number }}/index.html\">" > gh-pages-dir/index.html
           
-          ls -1d gh-pages-dir/allure-history/* | sort -n | head -n -20 | xargs rm -rf 2>/dev/null || true
+          ls -1d gh-pages-dir/*/ 2>/dev/null | grep -E '/[0-9]+/$' | sort -n | head -n -20 | xargs rm -rf 2>/dev/null || true
 
       - name: Deploy to GitHub Pages
         if: always()
