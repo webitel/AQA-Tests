@@ -1,0 +1,105 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+    get device by id
+    ","340","test__devices_by_id__GET_200","tests","2026-07-27","broken","2026-07-27","","test__devices","",""
+"
+    login with mobile mark
+    ","168","test__auth__login_mobile__POST_200","tests","2026-07-27","passed","2026-07-27","","test__auth","",""
+"
+    change password in /users/id/general
+    ","379","test__users_id__change_password__PUT_200","tests","2026-07-27","broken","2026-07-27","","test__users__users","",""
+"
+    create new domain + first user
+    check response
+
+    response:
+    {'access_token': 'access_token', 'token_type': 'Bearer'}
+    ","418","test__auth__signup__POST_200","tests","2026-07-27","passed","2026-07-27","","test__auth","",""
+"","474","test__call_center__skills_by_id_agents__DELETE_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"","521","test__call_center__preset_query_by_id__DELETE_200","tests","2026-07-27","passed","2026-07-27","","test__call_center__preset_query","",""
+"","334","test__call_center__skills_by_id_agents__POST_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"
+    get users
+    ","427","test__users__GET_200","tests","2026-07-27","broken","2026-07-27","","test__users__users","",""
+"","380","test__call_center__skills_by_id__PUT_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"
+    login with new user on new domain
+    ","170","test__auth__signin_with_new__POST_200","tests","2026-07-27","passed","2026-07-27","","test__auth","",""
+"
+    login without mobile mark
+    ","170","test__auth__login__POST_200[with domain]","tests","2026-07-27","passed","2026-07-27","","test__auth","",""
+"
+    add user
+    ","360","test__users__add__POST_200","tests","2026-07-27","passed","2026-07-27","","test__users__users","",""
+"
+    get user data by user id
+    ","363","test__user_by_id__GET_200","tests","2026-07-27","broken","2026-07-27","","test__users__user","",""
+"
+    set system settings
+    ","151","test__settings_id__PATCH_200","tests","2026-07-27","failed","2026-07-27","","test__settings","",""
+"","338","test__call_center__skills_by_id__GET_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"
+    get available system settings
+    ","327","test__settings_available__GET_200","tests","2026-07-27","passed","2026-07-27","","test__settings","",""
+"
+    get device by id
+    ","337","test__devices_id_users_audit__GET_200","tests","2026-07-27","broken","2026-07-27","","test__devices","",""
+"","546","test__call_center__preset_query_by_id__PUT_200","tests","2026-07-27","passed","2026-07-27","","test__call_center__preset_query","",""
+"","364","test__call_center__skills__GET_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"
+    change user password
+    ","705","test__users__password__PUT_200","tests","2026-07-27","passed","2026-07-27","","test__users__users","",""
+"
+    add new system setting
+    ","0","test__settings__POST_200","tests","2026-07-27","skipped","2026-07-27","","test__settings","",""
+"
+    get devices
+    ","503","test__devices__GET_200","tests","2026-07-27","broken","2026-07-27","","test__devices","",""
+"
+    Change device params by id
+    ","344","test__devices_by_id__PATCH_200","tests","2026-07-27","broken","2026-07-27","","test__devices","",""
+"","396","test__call_center__skills_by_id_agents__GET_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"
+    Change device name by id
+    ","392","test__devices_by_id__PUT_200","tests","2026-07-27","broken","2026-07-27","","test__devices","",""
+"
+    get system settings by id
+    ","156","test__settings_id__GET_200","tests","2026-07-27","failed","2026-07-27","","test__settings","",""
+"
+    DELETE system setting by id
+    ","0","test__settings_id__DELETE_200","tests","2026-07-27","skipped","2026-07-27","","test__settings","",""
+"","385","test__call_center__skills__POST_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"
+    get system settings
+    ","386","test__settings__GET_200","tests","2026-07-27","broken","2026-07-27","","test__settings","",""
+"","318","test__call_center__preset_query_by_id__GET_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__preset_query","",""
+"
+    Create new device
+    ","344","test__devices__POST_200","tests","2026-07-27","broken","2026-07-27","","test__devices","",""
+"","375","test__call_center__skills_by_id_agents__PATCH_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"","322","test__call_center__preset_query_by_id__PATCH_200","tests","2026-07-27","passed","2026-07-27","","test__call_center__preset_query","",""
+"
+    change password in /settings/general
+    ","373","test__users_id__change_password__PATCH_200","tests","2026-07-27","broken","2026-07-27","","test__users__users","",""
+"
+    get user data
+    ","356","test__user__GET_200","tests","2026-07-27","broken","2026-07-27","","test__users__user","",""
+"
+    force_password_change"": True
+    ","0","test__users_id__force_change_password__PUT_200","tests","2026-07-27","skipped","2026-07-27","","test__users__users","",""
+"","323","test__call_center__preset_query__POST_200","tests","2026-07-27","passed","2026-07-27","","test__call_center__preset_query","",""
+"","482","test__call_center__skills__delete_by_id__DELETE_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__skills","",""
+"
+    delete devices
+    ","564","test__devices_by_id__DELETE_200","tests","2026-07-27","broken","2026-07-27","","test__devices","",""
+"
+    login without mobile mark
+    ","166","test__auth__login__POST_200[without domain]","tests","2026-07-27","passed","2026-07-27","","test__auth","",""
+"","0","test__auth__login_password__POST_200","tests","2026-07-27","skipped","2026-07-27","","test__auth","",""
+"
+    {""id"":""login_id"",""totp"":""your_totp""}
+    ","0","test__auth__2fa__POST_200","tests","2026-07-27","skipped","2026-07-27","","test__auth","",""
+"","322","test__call_center__preset_query__GET_200","tests","2026-07-27","broken","2026-07-27","","test__call_center__preset_query","",""
+"
+    set system settings
+    ","185","test__settings_id__PUT_200","tests","2026-07-27","failed","2026-07-27","","test__settings","",""
