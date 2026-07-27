@@ -79,16 +79,12 @@ jobs:
       - name: Set up Allure CLI
         if: always()
         run: |
-          sudo apt-get update && sudo apt-get install -y wget unzip
-          wget https://github.com
-          unzip allure-2.32.0.zip
-          sudo mv allure-2.32.0 /opt/allure
-          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+          sudo npm install -g allure-commandline --unsafe-perm
+          allure --version
 
       - name: Generate Report and Clean History
         if: always()
         run: |
-          # Створюємо структуру папок
           mkdir -p gh-pages-dir/allure-history
           mkdir -p gh-pages-dir/last-history
           
