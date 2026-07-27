@@ -1,0 +1,8 @@
+{
+    "domain": "request for _domain_",
+    "id": "request for _id_",
+    "old_password": "request for _old_password_",
+    "user_password": "request for _user_password_",
+    "confirm_password": "request for _confirm_password_",
+    "username": "request for _username_"
+}

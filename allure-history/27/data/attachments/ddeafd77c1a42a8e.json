@@ -1,0 +1,12 @@
+{
+    "items": [
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "preset": {
+                "filters_manager.to_string": "response for _filters_manager.to_string_",
+                "namespace": "response for _namespace_"
+            }
+        }
+    ]
+}
