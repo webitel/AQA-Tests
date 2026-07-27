@@ -71,16 +71,21 @@ jobs:
           name: allure-results
           path: current-allure-results
 
-      - name: Allure Report action from marketplace
-        uses: simple-elf/allure-report-action@v1.13
+      - name: Load Allure history and generate report
+        uses: allure-framework/allure-github-actions@v2.3.7
         if: always()
-        id: allure-report
         with:
           allure_results: current-allure-results
-          gh_pages: gh-pages-dir
-          allure_history: allure-history
+          allure_history: gh-pages-dir/allure-history
           allure_report: allure-report
           keep_reports: 20
+
+      - name: Move report to deployment directory
+        if: always()
+        run: |
+          mkdir -p gh-pages-dir/allure-history
+          cp -r allure-report/. gh-pages-dir/allure-history/${{ github.run_number }}/
+          cp -r allure-report/. gh-pages-dir/
 
       - name: Deploy report to Github Pages
         if: always()
