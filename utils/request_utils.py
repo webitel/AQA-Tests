@@ -47,7 +47,8 @@ def set_password_to_normal():
     user_data = USER_new_pass_DATA
     passwords_list = list(P.values())*2
     for p in passwords_list:
-        data = {"password": p, "username": user_data['new_pass']['username']}
+        data = {"password": p, "username": user_data['new_pass']['username'],
+                "license": [{"id": f"{user_data['new_pass']['license_id']}"}],}
         request_set_password_to_normal = Webitel(obf_endpoint=USERS + "/{id}", custom_header={'X-Webitel-Access': user_data['access_token']})
         request_set_password_to_normal.put(endpoint=f"{USERS}/{user_data['new_pass']['user_id']}", data=data, attachments=False)
     counter_data = read_json_file(C_FILE)

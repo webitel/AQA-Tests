@@ -56,6 +56,7 @@ def test__users__password__PUT_200():
     assert old_pass_response['status'] in ["Bad Request", 'Unauthorized']
     ### try Login with new pass
     new_pass_response = do_login(pass_now['new_password'], data['username'], data['domain'])
+    assert new_pass_response['code'] == 200
     assert isinstance(new_pass_response['access_token'], str)
 
 
