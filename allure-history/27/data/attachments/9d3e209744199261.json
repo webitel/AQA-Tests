@@ -1,9 +1,0 @@
-{
-    "description": "request for _description_",
-    "name": "request for _name_",
-    "preset": {
-        "filters_manager.to_string": "request for _filters_manager.to_string_",
-        "namespace": "request for _namespace_"
-    },
-    "section": "request for _section_"
-}

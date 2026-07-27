@@ -1,1 +1,0 @@
-https://test.webitel.me/call_center/skills/{skill_id}/agents

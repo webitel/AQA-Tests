@@ -1,5 +1,0 @@
-{
-    "aggs": {
-        "enabled": "response for _enabled_"
-    }
-}
