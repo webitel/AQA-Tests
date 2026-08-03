@@ -110,16 +110,20 @@ def get_skill_id_for_delete():
         raise e
 
 
-def get_agents_for_skill_id():
+def get_agents_for_skill_id(skill_id=None):
+    s_id = skill_id if skill_id is not None else f'{SKILLS_PARAMS['id']}'
     request = Webitel(obf_endpoint=CALL_CENTER+SKILLS+'/{skill_id}'+AGENTS)
-    response = request.get(endpoint=CALL_CENTER+SKILLS+f'/{SKILLS_PARAMS['id']}'+AGENTS, attachments=False)
+    response = request.get(endpoint=CALL_CENTER+SKILLS+f'/{s_id}'+AGENTS, attachments=False)
     return response.json()
 
 
-def get_agent_skill_row_for_skill_id():
-    r = get_agents_for_skill_id()
+def get_agent_skill_row_for_skill_id(skill_id=None, agent_id=None):
+    a_id = agent_id if agent_id is not None else f'{SKILLS_PARAMS['agent']['id']}'
+    r = get_agents_for_skill_id(skill_id=skill_id)
     if 'items' in r:
-        s_id = r['items'][0]['id']
+        for i in r['items']:
+            if i['agent']['id'] == str(a_id):
+                s_id = i['id']
         return s_id
     else:
         raise Exception("No Agents added for this skill")
@@ -135,4 +139,10 @@ def clear_agent_skill():
     r = get_agents_for_skill_id()
     if 'items' in r:
         s_id = r['items'][0]['id']
-        delete_skill_for_agent(skill_id=SKILLS_PARAMS['id'], s_id=s_id, agent_id=AGENTS_PARAMS['id'])
+        delete_skill_for_agent(skill_id=SKILLS_PARAMS['id'], s_id=s_id, agent_id=SKILLS_PARAMS['agent']['id'])
+
+def add_skill_for_agent():
+    data = {"capacity": 7, "skill": {"id": SKILLS_PARAMS['id'],"name": SKILLS_PARAMS['name']}}
+    request = Webitel(obf_endpoint=CALL_CENTER+AGENTS+'/{agent_id}'+SKILLS)
+    response = request.post(endpoint=CALL_CENTER+AGENTS+f'/{AGENTS_PARAMS['id']}'+SKILLS, data=data, attachments=False)
+    return response.json()

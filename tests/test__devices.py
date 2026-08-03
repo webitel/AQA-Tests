@@ -81,6 +81,8 @@ def test__devices__POST_200():
 @allure.story("Devices")
 # @pytest.mark.smoke
 @pytest.mark.nightly
+@pytest.mark.order(2)
+@pytest.mark.xdist_group(name="devices")
 def test__devices_by_id__PUT_200():
     """
     Change device name by id
@@ -98,6 +100,8 @@ def test__devices_by_id__PUT_200():
 @allure.story("Devices")
 # @pytest.mark.smoke
 @pytest.mark.nightly
+@pytest.mark.order(3)
+@pytest.mark.xdist_group(name="devices")
 def test__devices_by_id__PATCH_200():
     """
     Change device params by id
@@ -115,7 +119,7 @@ def test__devices_by_id__PATCH_200():
 @allure.story("Devices")
 # @pytest.mark.smoke
 @pytest.mark.nightly
-@pytest.mark.order(2)
+@pytest.mark.order(4)
 @pytest.mark.xdist_group(name="devices")
 def test__devices_by_id__DELETE_200():
     """

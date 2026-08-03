@@ -5,7 +5,7 @@ from utils.helpers import endpoint_schema, validate_schema
 from utils.request_helper import Webitel
 from utils.request_utils import get_skill_id_for_delete, get_agent_skill_row_for_skill_id
 from utils.endpoints import CALL_CENTER, SKILLS, AGENTS
-from config import SKILLS_PARAMS, AGENTS_PARAMS
+from config import SKILLS_PARAMS
 
 
 @allure.feature("CALL CENTER")
@@ -106,7 +106,7 @@ def test__call_center__skills_by_id_agents__GET_200():
 @pytest.mark.order(3)
 @pytest.mark.xdist_group(name="skills service agents")
 def test__call_center__skills_by_id_agents__POST_200():
-    data = {"agent": [{"id": f"{AGENTS_PARAMS['id']}", "name": f"{AGENTS_PARAMS['name']}"}],
+    data = {"agent": [{"id": f"{SKILLS_PARAMS['agent']['id']}", "name": f"{SKILLS_PARAMS['agent']['name']}"}],
             "capacity": 2,
             "enabled": False}
     request = Webitel(obf_endpoint=CALL_CENTER+SKILLS+'/{skill_id}'+AGENTS)
@@ -141,7 +141,7 @@ def test__call_center__skills_by_id_agents__PATCH_200():
 @pytest.mark.xdist_group(name="skills service agents")
 def test__call_center__skills_by_id_agents__DELETE_200():
     agent_skill_row = get_agent_skill_row_for_skill_id()
-    data = {"agent_id": [f"{AGENTS_PARAMS['id']}"],"id": [f"{agent_skill_row}"]}
+    data = {"agent_id": [f"{SKILLS_PARAMS['agent']['id']}"],"id": [f"{agent_skill_row}"]}
     request = Webitel(obf_endpoint=CALL_CENTER+SKILLS+'/{skill_id}'+AGENTS)
     response = request.delete(endpoint=CALL_CENTER+SKILLS+f"/{SKILLS_PARAMS['id']}"+AGENTS, data=data)
     assert response.status_code == 200

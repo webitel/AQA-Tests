@@ -7,6 +7,8 @@ CALL_CENTER = '/call_center'
 PRESET_QUERY_SERVICE = '/preset/query'
 SKILLS = '/skills'
 AGENTS = '/agents'
+BULK = '/bulk'
+LOOKUPS = '/lookups'
 
 
 #################################
