@@ -1,0 +1,1 @@
+https://test.webitel.me/call_center/agents/{agent_id}/skills

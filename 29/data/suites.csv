@@ -1,115 +1,115 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","447","test__call_center__agents_by_id__skills_by_id__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
-"
-    get users
-    ","474","test__users__GET_200","tests","2026-08-03","broken","2026-08-03","","test__users__users","",""
-"","388","test__call_center__preset_query__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__preset_query","",""
-"","390","test__call_center__skills_by_id__PUT_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
-"","384","test__call_center__agents_by_id__skills_by_id__PUT_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
-"
-    Change device params by id
-    ","463","test__devices_by_id__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
-"","393","test__call_center__agents_by_id__skills_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
-"","394","test__call_center__skills_by_id_agents__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
-"
-    change user password
-    ","914","test__users__password__PUT_200","tests","2026-08-03","passed","2026-08-03","","test__users__users","",""
-"","386","test__call_center__preset_query_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__preset_query","",""
-"
-    get available system settings
-    ","387","test__settings_available__GET_200","tests","2026-08-03","passed","2026-08-03","","test__settings","",""
-"
-    get system settings by id
-    ","213","test__settings_id__GET_200","tests","2026-08-03","failed","2026-08-03","","test__settings","",""
-"
-    get device by id
-    ","516","test__devices_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
 "
     get user data by user id
-    ","424","test__user_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__users__user","",""
-"
-    delete devices
-    ","643","test__devices_by_id__DELETE_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
-"
-    set system settings
-    ","210","test__settings_id__PATCH_200","tests","2026-08-03","failed","2026-08-03","","test__settings","",""
-"
-    get device by id
-    ","405","test__devices_id_users_audit__GET_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
-"","412","test__call_center__skills__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
-"
-    get system settings
-    ","422","test__settings__GET_200","tests","2026-08-03","passed","2026-08-03","","test__settings","",""
-"","401","test__call_center__agents_by_id__skills__POST_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
-"","599","test__call_center__agents_by_id__skills_by_id__DELETE_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
-"","599","test__call_center__preset_query_by_id__DELETE_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__preset_query","",""
-"","447","test__call_center__skills_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
-"","0","test__auth__login_password__POST_200","tests","2026-08-03","skipped","2026-08-03","","test__auth","",""
-"
-    change password in /users/id/general
-    ","452","test__users_id__change_password__PUT_200","tests","2026-08-03","broken","2026-08-03","","test__users__users","",""
-"
-    login with new user on new domain
-    ","234","test__auth__signin_with_new__POST_200","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
-"","389","test__call_center__skills_by_id_agents__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
-"","410","test__call_center__preset_query_by_id__PATCH_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__preset_query","",""
-"
-    add new system setting
-    ","0","test__settings__POST_200","tests","2026-08-03","skipped","2026-08-03","","test__settings","",""
-"
-    DELETE system setting by id
-    ","0","test__settings_id__DELETE_200","tests","2026-08-03","skipped","2026-08-03","","test__settings","",""
-"
-    login with mobile mark
-    ","250","test__auth__login_mobile__POST_200","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
-"
-    force_password_change"": True
-    ","0","test__users_id__force_change_password__PUT_200","tests","2026-08-03","skipped","2026-08-03","","test__users__users","",""
-"
-    change password in /settings/general
-    ","457","test__users_id__change_password__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__users__users","",""
-"
-    {""id"":""login_id"",""totp"":""your_totp""}
-    ","0","test__auth__2fa__POST_200","tests","2026-08-03","skipped","2026-08-03","","test__auth","",""
-"","426","test__call_center__skills_by_id_agents__POST_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
-"
-    Create new device
-    ","405","test__devices__POST_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
-"","397","test__call_center__preset_query__POST_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__preset_query","",""
-"","391","test__call_center__agents_by_id__skills__GET_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__agents__skills","",""
-"","605","test__call_center__skills__delete_by_id__DELETE_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
-"
-    get devices
-    ","667","test__devices__GET_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
-"
-    get user data
-    ","416","test__user__GET_200","tests","2026-08-03","broken","2026-08-03","","test__users__user","",""
-"","384","test__call_center__agents_by_id__skills__DELETE_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__agents__skills","",""
-"
-    set system settings
-    ","216","test__settings_id__PUT_200","tests","2026-08-03","failed","2026-08-03","","test__settings","",""
-"","402","test__call_center__agents_by_id__skills__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
-"
-    login without mobile mark
-    ","231","test__auth__login__POST_200[without domain]","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
-"","436","test__call_center__agents_by_id__skills__bulk__POST_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__agents__skills","",""
-"
-    add user
-    ","459","test__users__add__POST_200","tests","2026-08-03","passed","2026-08-03","","test__users__users","",""
-"
-    login without mobile mark
-    ","242","test__auth__login__POST_200[with domain]","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
+    ","505","test__user_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__users__user","",""
 "
     Change device name by id
-    ","413","test__devices_by_id__PUT_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
-"","389","test__call_center__preset_query_by_id__PUT_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__preset_query","",""
+    ","499","test__devices_by_id__PUT_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
 "
     create new domain + first user
     check response
 
     response:
     {'access_token': 'access_token', 'token_type': 'Bearer'}
-    ","447","test__auth__signup__POST_200","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
-"","603","test__call_center__skills_by_id_agents__DELETE_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
-"","396","test__call_center__lookups__agent__skills__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__lookups","",""
-"","424","test__call_center__skills__POST_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+    ","529","test__auth__signup__POST_200","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
+"
+    set system settings
+    ","397","test__settings_id__PATCH_200","tests","2026-08-03","passed","2026-08-03","","test__settings","",""
+"","471","test__call_center__preset_query_by_id__PATCH_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__preset_query","",""
+"
+    get system settings by id
+    ","417","test__settings_id__GET_200","tests","2026-08-03","passed","2026-08-03","","test__settings","",""
+"
+    force_password_change"": True
+    ","0","test__users_id__force_change_password__PUT_200","tests","2026-08-03","skipped","2026-08-03","","test__users__users","",""
+"","410","test__call_center__agents_by_id__skills__GET_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__agents__skills","",""
+"","434","test__call_center__skills__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"
+    get system settings
+    ","498","test__settings__GET_200","tests","2026-08-03","passed","2026-08-03","","test__settings","",""
+"
+    Create new device
+    ","419","test__devices__POST_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
+"
+    get user data
+    ","457","test__user__GET_200","tests","2026-08-03","broken","2026-08-03","","test__users__user","",""
+"
+    Change device params by id
+    ","417","test__devices_by_id__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
+"","420","test__call_center__skills_by_id_agents__POST_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"
+    login with mobile mark
+    ","243","test__auth__login_mobile__POST_200","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
+"
+    get device by id
+    ","429","test__devices_id_users_audit__GET_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
+"","419","test__call_center__lookups__agent__skills__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__lookups","",""
+"
+    add new system setting
+    ","0","test__settings__POST_200","tests","2026-08-03","skipped","2026-08-03","","test__settings","",""
+"","416","test__call_center__agents_by_id__skills__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
+"","681","test__call_center__agents_by_id__skills_by_id__DELETE_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
+"","986","test__call_center__preset_query_by_id__DELETE_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__preset_query","",""
+"
+    add user
+    ","448","test__users__add__POST_200","tests","2026-08-03","passed","2026-08-03","","test__users__users","",""
+"
+    delete devices
+    ","686","test__devices_by_id__DELETE_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
+"","470","test__call_center__agents_by_id__skills_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
+"","412","test__call_center__preset_query_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__preset_query","",""
+"","390","test__call_center__preset_query__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__preset_query","",""
+"","450","test__call_center__agents_by_id__skills__bulk__POST_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__agents__skills","",""
+"
+    get users
+    ","461","test__users__GET_200","tests","2026-08-03","broken","2026-08-03","","test__users__users","",""
+"
+    login without mobile mark
+    ","258","test__auth__login__POST_200[without domain]","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
+"
+    login without mobile mark
+    ","240","test__auth__login__POST_200[with domain]","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
+"","414","test__call_center__skills_by_id__PUT_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"
+    get device by id
+    ","428","test__devices_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
+"","647","test__call_center__skills_by_id_agents__DELETE_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"","415","test__call_center__preset_query_by_id__PUT_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__preset_query","",""
+"","451","test__call_center__skills_by_id_agents__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"
+    change password in /users/id/general
+    ","524","test__users_id__change_password__PUT_200","tests","2026-08-03","broken","2026-08-03","","test__users__users","",""
+"
+    {""id"":""login_id"",""totp"":""your_totp""}
+    ","0","test__auth__2fa__POST_200","tests","2026-08-03","skipped","2026-08-03","","test__auth","",""
+"
+    get devices
+    ","715","test__devices__GET_200","tests","2026-08-03","broken","2026-08-03","","test__devices","",""
+"","412","test__call_center__agents_by_id__skills_by_id__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
+"","414","test__call_center__skills__POST_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"","414","test__call_center__preset_query__POST_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__preset_query","",""
+"
+    change password in /settings/general
+    ","465","test__users_id__change_password__PATCH_200","tests","2026-08-03","broken","2026-08-03","","test__users__users","",""
+"","0","test__auth__login_password__POST_200","tests","2026-08-03","skipped","2026-08-03","","test__auth","",""
+"","474","test__call_center__skills_by_id__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"
+    login with new user on new domain
+    ","258","test__auth__signin_with_new__POST_200","tests","2026-08-03","passed","2026-08-03","","test__auth","",""
+"","428","test__call_center__skills_by_id_agents__GET_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"
+    get available system settings
+    ","414","test__settings_available__GET_200","tests","2026-08-03","passed","2026-08-03","","test__settings","",""
+"","409","test__call_center__agents_by_id__skills__POST_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
+"","410","test__call_center__agents_by_id__skills_by_id__PUT_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__agents__skills","",""
+"","699","test__call_center__skills__delete_by_id__DELETE_200","tests","2026-08-03","broken","2026-08-03","","test__call_center__skills","",""
+"
+    change user password
+    ","987","test__users__password__PUT_200","tests","2026-08-03","passed","2026-08-03","","test__users__users","",""
+"
+    set system settings
+    ","465","test__settings_id__PUT_200","tests","2026-08-03","passed","2026-08-03","","test__settings","",""
+"","410","test__call_center__agents_by_id__skills__DELETE_200","tests","2026-08-03","passed","2026-08-03","","test__call_center__agents__skills","",""
+"
+    DELETE system setting by id
+    ","0","test__settings_id__DELETE_200","tests","2026-08-03","skipped","2026-08-03","","test__settings","",""

@@ -1,0 +1,161 @@
+{
+    "page": "response for _page_",
+    "next": "response for _next_",
+    "items": [
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "presence": {
+                "status": "response for _status_"
+            },
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_"
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_"
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_"
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "presence": {
+                "status": "response for _status_"
+            },
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            },
+            "contact": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "presence": {
+                "status": "response for _status_"
+            },
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_"
+        },
+        {
+            "id": "response for _id_",
+            "name": "response for _name_",
+            "username": "response for _username_",
+            "extension": "response for _extension_",
+            "device": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            }
+        }
+    ]
+}

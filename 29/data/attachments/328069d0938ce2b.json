@@ -1,0 +1,19 @@
+{
+    "id": "response for _id_",
+    "created_at": "response for _created_at_",
+    "created_by": {
+        "id": "response for _id_"
+    },
+    "updated_at": "response for _updated_at_",
+    "updated_by": {
+        "id": "response for _id_"
+    },
+    "agent": {
+        "id": "response for _id_"
+    },
+    "skill": {
+        "id": "response for _id_",
+        "name": "response for _name_"
+    },
+    "capacity": "response for _capacity_"
+}
