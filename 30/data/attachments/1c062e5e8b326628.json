@@ -1,0 +1,12 @@
+{
+    "items": [
+        {
+            "id": "response for _id_",
+            "skill": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            },
+            "capacity": "response for _capacity_"
+        }
+    ]
+}

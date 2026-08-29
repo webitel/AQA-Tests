@@ -1,0 +1,8 @@
+{
+    "capacity": "request for _capacity_",
+    "enabled": "request for _enabled_",
+    "skill": {
+        "id": "request for _id_",
+        "name": "request for _name_"
+    }
+}

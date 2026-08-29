@@ -1,0 +1,11 @@
+{
+    "items": [
+        {
+            "capacity": "request for _capacity_",
+            "skill": {
+                "id": "request for _id_",
+                "name": "request for _name_"
+            }
+        }
+    ]
+}

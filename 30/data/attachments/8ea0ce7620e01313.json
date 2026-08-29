@@ -1,0 +1,29 @@
+{
+    "page": "response for _page_",
+    "items": [
+        {
+            "user": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            },
+            "logged_in": "response for _logged_in_",
+            "logged_out": "response for _logged_out_"
+        },
+        {
+            "user": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            },
+            "logged_in": "response for _logged_in_",
+            "logged_out": "response for _logged_out_"
+        },
+        {
+            "user": {
+                "id": "response for _id_",
+                "name": "response for _name_"
+            },
+            "logged_in": "response for _logged_in_",
+            "logged_out": "response for _logged_out_"
+        }
+    ]
+}
